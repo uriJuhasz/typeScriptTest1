@@ -70,4 +70,20 @@ class SLL {
 class DLL extends SLL {
 }
 ;
+class A {
+}
+;
+class B extends A {
+}
+;
+class C extends A {
+    f() { }
+    ;
+}
+;
+class D extends B {
+    f() { }
+    ;
+}
+;
 //# sourceMappingURL=server.js.map
