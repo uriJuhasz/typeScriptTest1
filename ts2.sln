@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsWebApp1", "NodejsWebApp1\NodejsWebApp1.njsproj", "{1008661C-6EFC-453F-BC2E-F7616262092A}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ts2", "NodejsWebApp1\ts2.njsproj", "{1008661C-6EFC-453F-BC2E-F7616262092A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
