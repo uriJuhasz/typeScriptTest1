@@ -60,7 +60,7 @@ function f() {
     var ns: SLLNode = new SLLNode(5);
     var nd: DLLNode = new DLLNode(6);
     ns.setNext(nd);
-    nd.setNext(ns);
+//    nd.setNext(ns);
     nd.setNext(nd);
 }
 
@@ -70,8 +70,8 @@ class SLL {
     }
 
     insertFirst(val: V) {
-        var newNode: SLLNode = new SLLNode(val);
-        newNode.m_next = this.m_head;
+        let newNode = new SLLNode(val);
+        newNode.setNext(this.m_head);
         this.m_head = newNode;
     }
     m_head: SLLNode | null;
@@ -80,3 +80,8 @@ class SLL {
 class DLL extends SLL {
 
 };
+
+class A { };
+class B extends A { };
+abstract class C extends A { f(): void {};};
+class D extends B implements C { f() { }; };

@@ -13,6 +13,12 @@ class SLLNode {
         this.m_next = null;
         this.m_val = val;
     }
+    setNext(next) {
+        if (next == this.m_next)
+            return;
+        next.setNext(this.m_next);
+        this.m_next = next;
+    }
     removeNext() {
         if (this.m_next) {
             this.m_next = this.m_next.m_next;
@@ -25,20 +31,38 @@ class DLLNode extends SLLNode {
         super(val);
         this.m_prev = null;
     }
+    setNext(next) {
+        super.setNext(next);
+        if (this.m_next)
+            this.m_next.m_prev = this;
+    }
     removePrev() {
         if (this.m_prev) {
             this.m_prev = this.m_prev.m_prev;
+            this.m_prev.m_next = this;
         }
+    }
+    removeNext() {
+        super.removeNext();
+        if (this.m_next)
+            this.m_next.m_prev = this;
     }
 }
 ;
+function f() {
+    var ns = new SLLNode(5);
+    var nd = new DLLNode(6);
+    ns.setNext(nd);
+    //    nd.setNext(ns);
+    nd.setNext(nd);
+}
 class SLL {
     constructor() {
         this.m_head = null;
     }
     insertFirst(val) {
-        var newNode = new SLLNode(val);
-        newNode.m_next = this.m_head;
+        let newNode = new SLLNode(val);
+        newNode.setNext(this.m_head);
         this.m_head = newNode;
     }
 }
